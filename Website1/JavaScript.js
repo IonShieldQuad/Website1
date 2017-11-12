@@ -1,3 +1,6 @@
+
+
+//Constructor for a cell
 function item(title, desc, img, type, instock, ref){
 	this.title=title;
 	this.desc=desc;
@@ -6,6 +9,9 @@ function item(title, desc, img, type, instock, ref){
 	this.instock=instock;
 	this.ref=ref;
 }
+
+
+//Create and fill storage array
 var storage = new Array();
 storage[0] = new item("Бабочки", "Настенные часы, оформленные в виде кольца из бабочек", "GridImages/butterflies.png", "wall", true, "example.com");
 storage[1] = new item("Коты", "Настенные часы с котами", "GridImages/cats.png", "wall", false, "example.com");
@@ -29,13 +35,16 @@ var grid = document.getElementsByClassName("gridtable")[0];
 var fStorage = new Array();
 var rows = new Array();
 var menu = new Array();
-//var i=0;
 var fType = "all";
 
+
+//Get random int from range
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+//Shuffle array
 function shuffle (arr) {
 	var temp;
 	var j;
@@ -47,6 +56,8 @@ function shuffle (arr) {
 	}
 }
 
+
+//Filter array by type
 function filter(){
 	fStorage.length = 0;
 	for (i=0; i < storage.length; i++){
@@ -56,6 +67,8 @@ function filter(){
 	}
 }
 
+
+//Update grid
 function update(){
 	filter();
 	shuffle(fStorage);
@@ -76,6 +89,7 @@ function update(){
 }
 
 
+//Processes button input
 function setType(x){
 	switch(x){
 		case 0 :
@@ -102,6 +116,6 @@ function setType(x){
 	}
 	menu[x].dataset.sel = "1";
 }
-//alert(grid.innerHTML);
+
 
 update();
