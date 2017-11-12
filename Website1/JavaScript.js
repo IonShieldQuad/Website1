@@ -36,6 +36,7 @@ var fStorage = new Array();
 var rows = new Array();
 var menu = new Array();
 var fType = "all";
+i = 0;
 
 
 //Get random int from range
