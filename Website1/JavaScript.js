@@ -66,6 +66,9 @@ function update(){
 			rows = grid.getElementsByTagName("tr");
 			rows[rows.length-1].innerHTML += '<td class="gridcell"><a href="https://'+fStorage[i].ref+'"target="_blank"><img src="'+fStorage[i].img+'" width="160px"></a><a href="https://'+fStorage[i].ref+'"target="_blank"><p class="cap">'+fStorage[i].title+'</a></p>	<p data-instock="'+fStorage[i].instock+'"></p>	<p>'+fStorage[i].desc+'</p></td>';
 		}
+		while (grid.getElementsByTagName("tr").length < 3){
+			grid.innerHTML += '<tr></tr>'
+		}
 	}
 	else {
 		grid.innerHTML = '<tr></tr><tr><td></td><td id="empty"><div> Результаты не найдены </div></td><td></td></tr><tr></tr>';
