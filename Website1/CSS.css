@@ -19,16 +19,12 @@ html {
 }
 body {
 	background-color: #454545;
-	border: 5px outset #222;
-	/*margin: 0px 400px;*/
+	border: 8px ridge #807e7f;
+	border-radius: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	/*height: 100%;*/
 	min-width: 1100px;
 	max-width: 1200px;
-	/*width:60%;
-	position: relative;
-	left: 20%;*/
 	padding: 0px
 }
 footer {
@@ -64,7 +60,7 @@ header.main {
 	border: 0px;
 	
 }
-.search {
+/*.search {
 	background-color:#ddd;
 	margin: 10px 10px 10px 50px;
 	padding: 2px 5px;
@@ -73,7 +69,7 @@ header.main {
 	width: 210px;
 	font-size: 5px;
 	border-radius: 10px;
-}
+}*/
 header.extra {
 	background-color:#222;
 	height:350px;
@@ -82,9 +78,9 @@ header.extra {
 	background-image:url(Img/Logo2.jpg);
 	background-size: 100% 100%;
 }
-#headertext {
-	/*background-image:url("Gray.png");
-	background-size: 100% 100%;*/
+/*#headertext {
+	background-image:url("Gray.png");
+	background-size: 100% 100%;
 	background-color: rgba(50,50,50,0.4);
 	height:50px;
 	width:350px;
@@ -100,7 +96,7 @@ header.extra {
 	text-align:right;
 	vertical-align:center;
 	text-shadow: 2px 5px 2px #111;
-}
+}*/
 article#main {
 	background-color: inherit;
 	margin: 30px 30px 10px 30px;
@@ -112,16 +108,17 @@ section#menu {
 	float: left;
 	margin: 15px;
 	padding: 5px 0px 10px 0px;
+	border: 3px outset #807e7f;
 	height: 250px;
 	width: 250px;
 	background-color:#807e7f;
 	border-radius: 20px;
 }
 section#grid {
-	background-color: inherit;
+	background-color: #393939;
 	margin: 10px 20px 10px 0px;
 	padding: 5px 5px;
-	border: 2px solid #807e7f;
+	border: 4px inset #393939;
 	height: 700px;
 	width: 675px;
 	float:right;
@@ -193,7 +190,7 @@ table.gridtable, table.gridtable tr, table.gridtable td {
 }
 table.gridtable td {
 	text-align: center;
-	border: 1px solid #444;
+	border: 3px outset #444;
 	margin: 5px;
 	padding: 0px;
 	background-color: #807e7f;
@@ -252,6 +249,7 @@ section#map {
 	height: 250px;
 	width: 675px;
 	background-color:#222;
+	border: 3px outset #807e7f;
 	border-radius: 5px;
 	background-image: url(Img/Map.png);
 	background-size: 100% 100%;
@@ -263,6 +261,7 @@ section#contact {
 	height: 250px;
 	width: 270px;
 	background-color:#807e7f;
+	border: 3px outset #807e7f;
 	border-radius: 20px;
 }
 section#contact p {
