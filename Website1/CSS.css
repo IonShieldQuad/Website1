@@ -11,24 +11,17 @@ p {
 }
 html {
 	font-size:20px;
-	/*font-family: 'Open Sans', sans-serif;*/
 	font-family: Calibri, sans-serif;
-	/*background-color: #222;*/
 	background: linear-gradient(to right, rgba(32,32,32,1), rgba(255,255,255,1),rgba(32,32,32,1)); 
 	color:#f69;
 }
 body {
 	background-color: #454545;
 	border: 5px outset #222;
-	/*margin: 0px 400px;*/
 	margin-left: auto;
 	margin-right: auto;
-	/*height: 100%;*/
 	min-width: 1100px;
 	max-width: 1200px;
-	/*width:60%;
-	position: relative;
-	left: 20%;*/
 	padding: 0px
 }
 footer {
@@ -57,7 +50,6 @@ footer div:last-child {
 footer div table, tr, td {border-collapse: collapse;}
 header.main {
 	background-color:#454545;
-	/*background-image: url(Logo1.png);*/
 	background-size: 100% 100% ;
 	height: 300px;
 	margin: 70px 50px 20px 50px;
@@ -83,8 +75,6 @@ header.extra {
 	background-size: 100% 100%;
 }
 #headertext {
-	/*background-image:url("Gray.png");
-	background-size: 100% 100%;*/
 	background-color: rgba(50,50,50,0.4);
 	height:50px;
 	width:350px;
@@ -226,14 +216,12 @@ table.gridtable p.cap a {
 }
 table.gridtable p[data-instock='1'], table.gridtable p[data-instock='true'] {
 	padding: 2px;
-	/*background-color: #fde7da;*/
 	background: linear-gradient(to right,#b0b0b0 0%,#b0b0b0 0%,#fde7da 25%,#fde7da 75%,#b0b0b0 100%,#b0b0b0 100%);
 	margin: 0px;
 	border-radius: 0px;
 }
 table.gridtable p[data-instock='0'], table.gridtable p[data-instock='false'] {
 	padding: 2px;
-	/*background-color: #c0d8fa;*/
 	background: linear-gradient(to right,#b0b0b0 0%,#b0b0b0 0%,#c0d8fa 25%,#c0d8fa 75%,#b0b0b0 100%,#b0b0b0 100%);
 	margin: 0px;
 	border-radius: 0px;
