@@ -12,7 +12,7 @@ function Item(title, desc, img, type, instock, ref){
 
 
 //Create and fill storage array
-var storage = new Array();
+var storage = [];
 storage[0] = new Item("Бабочки", "Настенные часы, оформленные в виде кольца из бабочек", "GridImages/butterflies.png", "wall", true, "example.com");
 storage[1] = new Item("Коты", "Настенные часы с котами", "GridImages/cats.png", "wall", false, "example.com");
 storage[2] = new Item("Город", "Наручные часы со стрелками в виде зданий", "GridImages/city.png", "wrist", true, "example.com");
@@ -31,11 +31,14 @@ storage[14] = new Item("Космос", "Часы в виде шлема астр
 storage[15] = new Item("Лента", "Настенные часы в виде катушки с магнитой лентой", "GridImages/tape.png", "wall", false, "example.com");
 storage[16] = new Item("Колесо", "Часы в виде колеса велосипеда", "GridImages/wheel.png", "wall", true, "example.com");
 
-var grid = document.getElementsByClassName("gridtable")[0];
-var fStorage = new Array();
-var rows = new Array();
-var menu = new Array();
+var itemBox = document.getElementById('itemBox');
+var itemIndex = 0;
+var fStorage = [];
+var rows = [];
+var menu = [];
 var fType = "all";
+var menuOpen = false;
+var menuRef = document.getElementById('menu');
 
 
 //Get random int from range
@@ -56,6 +59,28 @@ function shuffle (arr) {
 	}
 }
 
+//Toggle menu
+function menuToggle(){
+	if (menuOpen){
+		menuOpen = false;
+		menuRef.style.visibility = 'collapse';
+	}
+	else {
+		menuOpen = true;
+		menuRef.style.visibility = 'visible';
+	}
+}
+
+//Move to another list item
+function listMove(steps = 0){
+	if (filter().length > 0)
+	itemIndex += steps;
+	if (itemIndex < 0){
+		itemIndex = filter().length - 1
+	}
+	itemIndex %= fStorage.length - 1;
+	update();
+}
 
 //Filter array by type
 function filter(){
@@ -65,6 +90,7 @@ function filter(){
 			fStorage[fStorage.length] = storage[i];
 		}
 	}
+	return fStorage;
 }
 
 
@@ -72,19 +98,13 @@ function filter(){
 function update(){
 	filter();
 	shuffle(fStorage);
-	grid.innerHTML = "";
+	itemBox.innerHTML = "";
 	if (fStorage.length != 0) {
-		for (let i = 0; i < fStorage.length; i++){
-			if (i % 3 == 0) {grid.innerHTML += "<tr></tr>";}; 
-			rows = grid.getElementsByTagName("tr");
-			rows[rows.length - 1].innerHTML += `<td class="gridcell"><a href="https://${fStorage[i].ref}" target="_blank"><img src="${fStorage[i].img}" width="160px"></a><a href="https://${fStorage[i].ref}"target="_blank"><p class="cap">${fStorage[i].title}</a></p>	<p data-instock="${fStorage[i].instock}"></p>	<p>${fStorage[i].desc}</p></td>`;
-		}
-		while (grid.getElementsByTagName("tr").length < 3){
-			grid.innerHTML += '<tr></tr>'
-		}
+		let i = itemIndex;
+		itemBox.innerHTML = `<div class="item"><a href="https://${fStorage[i].ref}" target="_blank"><img src="${fStorage[i].img}" width="160px"></a><a href="https://${fStorage[i].ref}"target="_blank"><p class="cap">${fStorage[i].title}</a></p>	<p data-instock="${fStorage[i].instock}"></p>	<p>${fStorage[i].desc}</p></div>`;
 	}
 	else {
-		grid.innerHTML = '<tr></tr><tr><td></td><td id="empty"><div> Результаты не найдены </div></td><td></td></tr><tr></tr>';
+		itemBox.innerHTML = '<div id="empty"> Результаты не найдены </div>';
 	}
 }
 
@@ -110,7 +130,7 @@ function setType(x){
 	}
 	update();
 	menu = document.getElementsByClassName('tf');
-	for (i=0; i < menu.length; i++){
+	for (let i = 0; i < menu.length; i++){
 		menu[i].dataset.sel = "0";
 	}
 	menu[x].dataset.sel = "1";

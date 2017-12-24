@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link href="CSS1.css" rel="stylesheet" type="text/css">
+	<script src="JavaScript1.js" defer="true"></script>
+</head>
+
+<!-- Top logo -->
+<title>Website project v0.9.9</title>
+<body>
+	<header class="main">
+	<img src="Img/Logo1.png" width="100%" alt="Error">
+	</header>
+
+
+
+
+	<!-- Second logo -->
+	<header class="extra">
+	</header>
+
+	<!-- Main grid -->
+	<article id="main">
+		<!--Menu button-->
+		<div id="menuBtn">
+			<input type="button" value="Меню" onclick="menuToggle()" />
+			<!-- Menu -->
+			<section id="menu">
+				<table class="menutable" border="1">
+					<tr><td><span class="tf" data-sel="1" onclick="setType(0)">Вся продукция</span></td></tr>
+					<tr><td><span class="tf" data-sel="0" onclick="setType(1)">Настенные часы</span></td></tr>
+					<tr><td><span class="tf" data-sel="0" onclick="setType(2)">Наручные часы</span></td></tr>
+					<tr><td><span class="tf" data-sel="0" onclick="setType(3)">Карманные часы</span></td></tr>
+					<tr><td><span class="tfs" style="color:#fde7da;">В наличии</span></td></tr>
+					<tr><td><span class="tfs" style="color:#c0d8fa;">Под заказ</span></td></tr>
+				</table>
+			</section>
+		</div>
+	
+		<!-- Grid -->
+		<section id="grid">
+			<input id="btnLeft" type="button" value="<" onclick="listMove(-1)" />
+			
+			<div id="itemBox">
+			</div>
+			
+			<input id="btnRight" type="button" value=">" onclick="listMove(1)" />
+		</section>
+	</article>
+
+	<div id="undermain">
+		<!--Map-->
+		<div id="map">
+		</div>
+
+		<!--Contact-->
+		<div id="contact">
+			<p>Мы находимся по адресу: г. Магнитогорск, Ул. Ленина, дом 17 <br /><br /> Контакты:  Мастер 8--- ------9, Продавец: 8--- ------2</p>
+		</div>
+	</div>
+	
+	<!-- Stuff at the bottom -->
+	<footer>
+		<div>Мы в соцсетях<br />
+			<a href="https://www.facebook.com" target="_blank"><img src="Img/fb_icon.png" width="30px" alt="0"></a>
+			<a href="https://www.twitter.com" target="_blank"><img src="Img/tw_icon.png" width="30px" alt="0"></a>
+			<a href="https://www.vk.com" target="_blank"><img src="Img/vk_icon.png" width="30px" alt="0"></a>
+		</div>
+
+		<div>Почта<br />
+			<small>fsbwillshallnotpass@yandex.ru</small>
+		</div>
+
+		<div><a href="https://www.svsumg.org" target="_blank"><small>www.svmsumg.com</small></a></div>
+	</footer>
+
+</body>
+</html>
