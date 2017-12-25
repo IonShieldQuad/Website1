@@ -128,6 +128,7 @@ function setType(x){
 			fType = 'all';
 			break;
 	}
+	itemIndex = 0;
 	update();
 	menu = document.getElementsByClassName('tf');
 	for (let i = 0; i < menu.length; i++){
